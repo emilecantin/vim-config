@@ -1,3 +1,8 @@
+" This file is here, because it is easier to bundle all my
+" VIM config all in the same folder.
+" Please symlink it to ~/.vimrc
+"
+
 " Remap some keys to make window navigation less painful
 map <C-H> <C-W>h
 map <C-J> <C-W>j
