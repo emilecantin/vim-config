@@ -3,6 +3,9 @@
 " Please symlink it to ~/.vimrc
 "
 
+" Add smart indentation
+set smartindent
+
 " Remap some keys to make window navigation less painful
 map <C-H> <C-W>h
 map <C-J> <C-W>j
@@ -47,3 +50,4 @@ endfunction
 
 " Do not change CTRL-P's working dir
 let g:ctrlp_working_path_mode = 0
+
