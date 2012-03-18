@@ -3,6 +3,9 @@
 " Please symlink it to ~/.vimrc
 "
 
+" Start Pathogen
+call pathogen#infect()
+
 " Add smart indentation
 set smartindent
 
@@ -26,18 +29,19 @@ command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang
 
+" Color Scheme (only if GUI running) {{{
+if has("gui_running")
+    colorscheme tango2
+endif
+
 " Look for local vim config files
 if filereadable(".vim.custom")
 	so .vim.custom
 endif
 
-" Start Pathogen
-call pathogen#infect()
-
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 function! s:CloseIfOnlyNerdTreeLeft()
   if exists("t:NERDTreeBufName")
     if bufwinnr(t:NERDTreeBufName) != -1
