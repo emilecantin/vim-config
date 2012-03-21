@@ -25,3 +25,6 @@
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = git@github.com:emilecantin/vim-colorschemes.git
+[submodule "bundle/vim-latex"]
+	path = bundle/vim-latex
+	url = git://github.com/emilecantin/vim-latex.git
