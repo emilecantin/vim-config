@@ -31,7 +31,7 @@ command! -bang WQ wq<bang
 
 " Color Scheme (only if GUI running) {{{
 if has("gui_running")
-    colorscheme tango2
+    colorscheme smyck
 endif
 
 " Look for local vim config files
