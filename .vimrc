@@ -9,6 +9,12 @@ call pathogen#infect()
 " Add smart indentation
 set smartindent
 
+" set tabs
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
 " Remap some keys to make window navigation less painful
 map <C-H> <C-W>h
 map <C-J> <C-W>j
@@ -32,6 +38,10 @@ command! -bang WQ wq<bang
 " Color Scheme (only if GUI running) {{{
 if has("gui_running")
     colorscheme smyck
+endif
+" set macvim specific stuff
+if has("gui_macvim")
+    set transparency=10
 endif
 
 " Look for local vim config files
