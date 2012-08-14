@@ -46,3 +46,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/emilecantin/tagbar.git
