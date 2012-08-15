@@ -38,6 +38,10 @@ command! -bang WQ wq<bang
 " Color Scheme (only if GUI running) {{{
 if has("gui_running")
     colorscheme smyck
+    set guifont=Menlo\ for\ Powerline
+    let g:Powerline_symbols = 'fancy'
+    set fillchars+=stl:\ ,stlnc:\
+    set encoding=utf-8
 endif
 " set macvim specific stuff
 if has("gui_macvim")
