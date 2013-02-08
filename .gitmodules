@@ -46,3 +46,15 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/vim-buffing-wheel"]
+	path = bundle/vim-buffing-wheel
+	url = git://github.com/ngn/vim-buffing-wheel.git
+[submodule "bundle/jsruntime"]
+	path = bundle/jsruntime
+	url = git://github.com/michalliu/jsruntime.vim.git
+[submodule "bundle/jsoncodecs"]
+	path = bundle/jsoncodecs
+	url = git://github.com/michalliu/jsoncodecs.vim.git
+[submodule "bundle/sourcebeautify"]
+	path = bundle/sourcebeautify
+	url = git://github.com/michalliu/sourcebeautify.vim.git
