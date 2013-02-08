@@ -31,7 +31,12 @@ command! -bang WQ wq<bang
 
 " Color Scheme (only if GUI running) {{{
 if has("gui_running")
-    colorscheme smyck
+    let g:Powerline_symbols = 'fancy'
+    syntax on
+    colorscheme solarized
+    set gfn=Consolas_for_Powerline_FixedD:h12:cANSI
+    au GUIEnter * simalt ~n
+    set encoding=utf8
 endif
 
 " Look for local vim config files
@@ -55,3 +60,26 @@ endfunction
 " Do not change CTRL-P's working dir
 let g:ctrlp_working_path_mode = 0
 
+" Filetype plugin
+filetype plugin indent on
+
+" Tabs -> spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+map <F2> :NERDTreeToggle
+
+" Ctrl-Tab and Ctrl-Shift-Tab
+map <C-Tab> :BuffingWheelNext
+map <C-s-Tab> :BuffingWheelPrevious
+map <C-Right> :tabnext
+map <C-Left> :tabprevious
+
+" MiniBufExpl Colors
+hi MBEVisibleActive guifg=#A6DB29 guibg=fg
+hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
+hi MBEVisibleChanged guifg=#F1266F guibg=fg
+hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+hi MBEChanged guifg=#CD5907 guibg=fg
+hi MBENormal guifg=#000000 guibg=fg
