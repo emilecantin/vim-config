@@ -43,9 +43,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/vim-buffing-wheel"]
-	path = bundle/vim-buffing-wheel
-	url = git://github.com/ngn/vim-buffing-wheel.git
 [submodule "bundle/jsruntime"]
 	path = bundle/jsruntime
 	url = git://github.com/michalliu/jsruntime.vim.git
@@ -60,4 +57,13 @@
 	url = git://github.com/majutsushi/tagbar.git
 [submodule "bundle/vim-startify"]
 	path = bundle/vim-startify
-	url = git@github.com:mhinz/vim-startify.git
+	url = git://github.com/mhinz/vim-startify.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scroloose/syntastic.git
+[submodule "bundle/vim-puppet"]
+	path = bundle/vim-puppet
+	url = git://github.com/rodjek/vim-puppet.git
