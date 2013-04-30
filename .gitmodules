@@ -49,9 +49,6 @@
 [submodule "bundle/jsoncodecs"]
 	path = bundle/jsoncodecs
 	url = git://github.com/michalliu/jsoncodecs.vim.git
-[submodule "bundle/sourcebeautify"]
-	path = bundle/sourcebeautify
-	url = git://github.com/michalliu/sourcebeautify.vim.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
