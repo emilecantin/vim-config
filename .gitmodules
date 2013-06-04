@@ -64,3 +64,6 @@
 [submodule "bundle/vim-puppet"]
 	path = bundle/vim-puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "bundle/todo.txt-vim"]
+	path = bundle/todo.txt-vim
+	url = git://github.com/freitass/todo.txt-vim.git
