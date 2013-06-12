@@ -67,3 +67,6 @@
 [submodule "bundle/todo.txt-vim"]
 	path = bundle/todo.txt-vim
 	url = git://github.com/freitass/todo.txt-vim.git
+[submodule "bundle/vim-perforce"]
+	path = bundle/vim-perforce
+	url = git://github.com/pydave/vim-perforce.git
