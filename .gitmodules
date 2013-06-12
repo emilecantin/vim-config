@@ -70,3 +70,6 @@
 [submodule "bundle/vim-perforce"]
 	path = bundle/vim-perforce
 	url = git://github.com/pydave/vim-perforce.git
+[submodule "bundle/genutils"]
+	path = bundle/genutils
+	url = git://github.com/vim-scripts/genutils.git
