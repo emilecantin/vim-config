@@ -76,9 +76,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/javascript-libraries-syntax"]
-	path = bundle/javascript-libraries-syntax
-	url = git://github.com/othree/javascript-libraries-syntax.vim.git
 [submodule "bundle/jscomplete-vim"]
 	path = bundle/jscomplete-vim
 	url = git://github.com/teramako/jscomplete-vim.git
