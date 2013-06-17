@@ -7,21 +7,9 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = git://github.com/emilecantin/vim-colorschemes.git
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = git://github.com/emilecantin/vim-latex.git
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = git://github.com/ap/vim-css-color.git
@@ -31,18 +19,9 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/vim-jade"]
-	path = bundle/vim-jade
-	url = git://github.com/digitaltoad/vim-jade.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/jsruntime"]
 	path = bundle/jsruntime
 	url = git://github.com/michalliu/jsruntime.vim.git
@@ -55,15 +34,9 @@
 [submodule "bundle/vim-startify"]
 	path = bundle/vim-startify
 	url = git://github.com/mhinz/vim-startify.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scroloose/syntastic.git
-[submodule "bundle/vim-puppet"]
-	path = bundle/vim-puppet
-	url = git://github.com/rodjek/vim-puppet.git
 [submodule "bundle/todo.txt-vim"]
 	path = bundle/todo.txt-vim
 	url = git://github.com/freitass/todo.txt-vim.git
