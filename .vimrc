@@ -47,7 +47,6 @@ map <S-Insert> "+gP
 cmap <C-V> <C-R>+
 cmap <S-Insert> <C-R>+
 
-
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
 " were characterwise instead.
@@ -66,39 +65,47 @@ noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
+" Buffer navigation
+" Ctrl-Tab and Ctrl-Shift-Tab
+nmap <C-Tab> :bn<CR>
+nmap <C-s-Tab> :bp<CR>
+map <C-Right> :tabnext
+map <C-Left> :tabprevious
+
+
 if has("gui_running")
-    let g:Powerline_symbols = 'fancy'
-    syntax on
-    " Color Scheme
-    colorscheme solarized
-    set gfn=Consolas_for_Powerline_FixedD:h11:cANSI
-    au GUIEnter * simalt ~n
-    set encoding=utf8
-    " Set VIM to show non-printable characters
-    set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
-    set list
-    " Remove toolbar and menubar
-    set guioptions-=m
-    set guioptions-=T
+	let g:Powerline_symbols = 'fancy'
+	syntax on
+	" Color Scheme
+	colorscheme solarized
+	set gfn=Consolas_for_Powerline_FixedD:h11:cANSI
+	au GUIEnter * simalt ~n
+	set encoding=utf8
+	" Set VIM to show non-printable characters
+	set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
+	set list
+	" Remove toolbar and menubar
+	set guioptions-=m
+	set guioptions-=T
 endif
 
 " Look for local vim config files
 if filereadable(".vim.custom")
-    so .vim.custom
+	so .vim.custom
 endif
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-        if bufwinnr(t:NERDTreeBufName) != -1
-            if winnr("$") == 1
-                q
-            endif
-        endif
-    endif
-endfunction
+"autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+"function! s:CloseIfOnlyNerdTreeLeft()
+"	if exists("t:NERDTreeBufName")
+"		if bufwinnr(t:NERDTreeBufName) != -1
+"			if winnr("$") == 1
+"				q
+"			endif
+"		endif
+"	endif
+"endfunction
 
 " Do not change CTRL-P's working dir
 let g:ctrlp_working_path_mode = 0
@@ -106,49 +113,99 @@ let g:ctrlp_working_path_mode = 0
 " Filetype plugin
 filetype plugin indent on
 
-" Tabs -> spaces
+" Indentation settings
 set tabstop=4
 set shiftwidth=4
-set expandtab
+"set expandtab
 
 map <F2> :NERDTreeToggle
 nmap <F3> :TagbarToggle
 
-" Ctrl-Tab and Ctrl-Shift-Tab
-map <C-Tab> :BuffingWheelNext
-map <C-s-Tab> :BuffingWheelPrevious
-map <C-Right> :tabnext
-map <C-Left> :tabprevious
+map <C-p> :CtrlP<CR>
+map <C-b> :CtrlPBuffer<CR>
 
-map <C-p> :CtrlP
-
-" MiniBufExpl Colors
-hi MBEVisibleActive guifg=#A6DB29 guibg=fg
-hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-hi MBEVisibleChanged guifg=#F1266F guibg=fg
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-hi MBEChanged guifg=#CD5907 guibg=fg
-hi MBENormal guifg=#000000 guibg=fg
-
-
-" Perforce integration
-if !exists("g:p4client")
-    let g:p4client = "ecantin-IMS4.0.x"
-endif
-function P4Edit ()
-    let command = "!p4 -c " . g:p4client . " edit " . bufname("%")
-    execute command
-endfunction
-
-function P4Add ()
-    let command = "!p4 -c " . g:p4client . " add " . bufname("%")
-    execute command
-endfunction
-
-autocmd FileChangedRO * call P4Edit()
+" Perforce workspaces:
+:let g:p4Presets = 'P4CONFIG'
+:let g:p4DefaultPreset  = 'P4CONFIG'
 
 " Automatically sync NERDTree
-autocmd BufWinEnter * NERDTreeMirror
+"autocmd BufWinEnter * NERDTreeMirror
 
 " Set vim to update autmatically when a file's read-only state is changed
 :set autoread
+
+let g:startify_bookmarks = [ '$MYVIMRC', '/Users/ecantin/Dropbox/todo/todo.txt' ]
+
+" reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Line numbers
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" Completion
+"
+"function! JsIncludeExpr(file)
+"  if (filereadable(a:file))
+"    echom "Exists: " . a:file
+"    return a:file
+"  else
+"    let l:file2=substitute(substitute(a:file,'\\.js$','','g'),'$','/index.js','g')
+"    echom "Substitued to " . l:file2
+"    if (!filereadable(l:file2))
+"      echom "Nothing found for " . a:file
+"    endif
+"    return l:file2
+"  endif
+"endfunction
+"function s:setJSOptions()
+"  echom "Setting options for JS"
+"  set omnifunc=javascriptcomplete#CompleteJS
+"  set path+=./node_modules/**,node_modules/**
+"  set include=require(.\\zs[^'\"]*\\ze
+"  set includeexpr=JsIncludeExpr(v:fname)
+"  set suffixesadd=.js
+"endfunction
+"autocmd FileType javascript call s:setJSOptions()
+
+let g:nodejs_complete_config = {
+\  'js_compl_fn': 'jscomplete#CompleteJS',
+\  'max_node_compl_len': 15
+\}
+
+noremap <C-f> :Ack --ignore-dir server/node_modules --ignore-dir node_modules -i 
+
+" Always show statusline
+set laststatus=2
+
+let NERDTreeShowLineNumbers=0
+
+
+" Configure Unite.vim
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=5000
+let g:unite_prompt='» '
+let g:unite_source_grep_command='ack'
+let g:unite_source_grep_default_opts='--no-heading --no-color -a'
+let g:unite_source_grep_recursive_opt=''
+
+nmap <space> [unite]
+nnoremap [unite] <nop>
+nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec buffer file_mru bookmark<cr><c-u>
+nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec<cr><c-u>
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
+nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
+nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline<cr>
+nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
+
