@@ -43,12 +43,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/jscomplete-vim"]
-	path = bundle/jscomplete-vim
-	url = git://github.com/teramako/jscomplete-vim.git
-[submodule "bundle/vim-nodejs-complete"]
-	path = bundle/vim-nodejs-complete
-	url = git://github.com/myhere/vim-nodejs-complete.git
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
@@ -58,3 +52,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = https://github.com/marijnh/tern_for_vim
