@@ -1,19 +1,30 @@
 " This file is here, because it is easier to bundle all my
 " VIM config all in the same folder.
-" Please symlink it to ~/.vimrc
+" Please symlink or copy it to ~/.vimrc
 "
 
-" Start Pathogen
-call pathogen#infect()
+" Vundle and bundles configuration:
+"
+" IMPORTANT: On first installation, most of this file will be broken. You need
+" to install bundles by running the following command inside the vim directory:
+"
+" vim -u bundles.vim +BundleInstall +q
+"
+if has('win32') || has('win64')
+	source $HOME/vimfiles/bundles.vim
+else
+	source $HOME/.vim/bundles.vim
+endif
+
 
 " Add smart indentation
 set smartindent
 
 " Remap some keys to make window navigation less painful
-map <C-H> <C-W>h
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
+noremap <C-H> <C-W>h
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-L> <C-W>l
 
 " Make Y behave like other capitals
 nnoremap Y y$
@@ -41,8 +52,8 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V> "+gP
-map <S-Insert> "+gP
+noremap <C-V> "+gP
+noremap <S-Insert> "+gP
 
 cmap <C-V> <C-R>+
 cmap <S-Insert> <C-R>+
@@ -53,8 +64,8 @@ cmap <S-Insert> <C-R>+
 " Uses the paste.vim autoload script.
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
-imap <S-Insert> <C-V>
-vmap <S-Insert> <C-V>
+inoremap <S-Insert> <C-V>
+vnoremap <S-Insert> <C-V>
 
 
 " Use CTRL-Q to do what CTRL-V used to do
@@ -67,18 +78,24 @@ inoremap <C-S> <C-O>:update<CR>
 
 " Buffer navigation
 " Ctrl-Tab and Ctrl-Shift-Tab
-nmap <C-Tab> :bn<CR>
-nmap <C-s-Tab> :bp<CR>
-map <C-Right> :tabnext
-map <C-Left> :tabprevious
+nnoremap <C-Tab> :bn<CR>
+nnoremap <C-s-Tab> :bp<CR>
+nnoremap <C-w> :bd<CR>
+noremap <C-Right> :tabnext
+noremap <C-Left> :tabprevious
 
+" Use CTRL-E to do what CTRL-W used to do
+noremap <C-E> <C-W>
 
 if has("gui_running")
-	let g:Powerline_symbols = 'fancy'
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#branch#enabled = 0
 	syntax on
 	" Color Scheme
 	colorscheme solarized
-	set gfn=Consolas_for_Powerline_FixedD:h11:cANSI
+	set background=light
+	set gfn=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
 	au GUIEnter * simalt ~n
 	set encoding=utf8
 	" Set VIM to show non-printable characters
@@ -94,19 +111,6 @@ if filereadable(".vim.custom")
 	so .vim.custom
 endif
 
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-"autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-"function! s:CloseIfOnlyNerdTreeLeft()
-"	if exists("t:NERDTreeBufName")
-"		if bufwinnr(t:NERDTreeBufName) != -1
-"			if winnr("$") == 1
-"				q
-"			endif
-"		endif
-"	endif
-"endfunction
-
 " Do not change CTRL-P's working dir
 let g:ctrlp_working_path_mode = 0
 
@@ -118,8 +122,17 @@ set tabstop=4
 set shiftwidth=4
 "set expandtab
 
-map <F2> :NERDTreeToggle
-nmap <F3> :TagbarToggle
+noremap <F2> :NERDTreeToggle
+noremap <F3> :NERDTreeFind
+noremap <F4> :TagbarToggle
+
+"noremap <F5> :TernDef
+"noremap <F6> :TernType
+"noremap <F7> :TernDocBrowse
+
+noremap <F11> :set background=light
+noremap <F12> :set background=dark
+
 
 map <C-p> :CtrlP<CR>
 map <C-b> :CtrlPBuffer<CR>
@@ -127,6 +140,7 @@ map <C-b> :CtrlPBuffer<CR>
 " Perforce workspaces:
 :let g:p4Presets = 'P4CONFIG'
 :let g:p4DefaultPreset  = 'P4CONFIG'
+:let g:p4EnableMenu = 1
 
 " Automatically sync NERDTree
 "autocmd BufWinEnter * NERDTreeMirror
@@ -146,35 +160,10 @@ vnoremap > >gv
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-" Completion
-"
-"function! JsIncludeExpr(file)
-"  if (filereadable(a:file))
-"    echom "Exists: " . a:file
-"    return a:file
-"  else
-"    let l:file2=substitute(substitute(a:file,'\\.js$','','g'),'$','/index.js','g')
-"    echom "Substitued to " . l:file2
-"    if (!filereadable(l:file2))
-"      echom "Nothing found for " . a:file
-"    endif
-"    return l:file2
-"  endif
-"endfunction
-"function s:setJSOptions()
-"  echom "Setting options for JS"
-"  set omnifunc=javascriptcomplete#CompleteJS
-"  set path+=./node_modules/**,node_modules/**
-"  set include=require(.\\zs[^'\"]*\\ze
-"  set includeexpr=JsIncludeExpr(v:fname)
-"  set suffixesadd=.js
-"endfunction
-"autocmd FileType javascript call s:setJSOptions()
-
-let g:nodejs_complete_config = {
-\  'js_compl_fn': 'jscomplete#CompleteJS',
-\  'max_node_compl_len': 15
-\}
+"let g:nodejs_complete_config = {
+"\  'js_compl_fn': 'jscomplete#CompleteJS',
+"\  'max_node_compl_len': 15
+"\}
 
 noremap <C-f> :Ack --ignore-dir server/node_modules --ignore-dir node_modules -i 
 
@@ -209,3 +198,6 @@ nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mappin
 nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline<cr>
 nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
+let g:EclimCompletionMethod = 'omnifunc'
+
+" Configure vim-airline
