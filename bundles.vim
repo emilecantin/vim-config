@@ -29,7 +29,9 @@ Bundle 'bling/vim-airline'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
 Bundle 'groenewege/vim-less'
-Bundle 'pydave/vim-perforce'
+if g:hasP4
+	Bundle 'pydave/vim-perforce'
+endif
 Bundle 'mhinz/vim-startify'
 
 
