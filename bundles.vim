@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 Bundle 'emilecantin/vim-colorschemes'
 Bundle 'mhinz/vim-startify'
 Bundle 'bling/vim-airline'
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
 
 " Autocomplete :
 Bundle 'Valloric/YouCompleteMe'
