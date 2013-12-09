@@ -10,27 +10,42 @@ else
   call vundle#rc()
 endif
 
+" Init Vundle :
 Bundle 'gmarik/vundle'
 
-" Bundles here!
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'mileszs/ack.vim'
+" Customization :
 Bundle 'emilecantin/vim-colorschemes'
+Bundle 'mhinz/vim-startify'
+Bundle 'bling/vim-airline'
+
+" Autocomplete :
+Bundle 'Valloric/YouCompleteMe'
+
+" Search & navigation :
+Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Shougo/unite.vim'
+Bundle 'majutsushi/tagbar'
+
+" Language support :
+Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'groenewege/vim-less'
+Bundle 'ap/vim-css-color'
 Bundle 'vim-scripts/genutils'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
 Bundle 'freitass/todo.txt-vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'bling/vim-airline'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ap/vim-css-color'
-Bundle 'groenewege/vim-less'
+
+" SCM support :
 Bundle 'pydave/vim-perforce'
-Bundle 'mhinz/vim-startify'
+
+" Snippets :
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 
 filetype plugin indent on     " required!
