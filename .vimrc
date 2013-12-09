@@ -1,8 +1,13 @@
 " This file is here, because it is easier to bundle all my
 " VIM config all in the same folder.
 " Please symlink or copy it to ~/.vimrc
-"
 
+
+" Enable / disable features:
+let g:hasP4 = false
+
+"
+"
 " Vundle and bundles configuration:
 "
 " IMPORTANT: On first installation, most of this file will be broken. You need
@@ -10,7 +15,7 @@
 "
 " vim -u bundles.vim +BundleInstall +q
 "
-if has('win32') || has('win64')
+if (has('win32') || has('win64'))
 	source $HOME/vimfiles/bundles.vim
 else
 	source $HOME/.vim/bundles.vim
@@ -81,13 +86,14 @@ inoremap <C-S> <C-O>:update<CR>
 nnoremap <C-Tab> :bn<CR>
 nnoremap <C-s-Tab> :bp<CR>
 nnoremap <C-w> :bd<CR>
-noremap <C-Right> :tabnext
-noremap <C-Left> :tabprevious
+noremap <C-Right> :tabnext
+noremap <C-Left> :tabprevious
 
 " Use CTRL-E to do what CTRL-W used to do
 noremap <C-E> <C-W>
 
 if has("gui_running")
+	" Configure Vim-Airline
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#branch#enabled = 0
@@ -95,15 +101,23 @@ if has("gui_running")
 	" Color Scheme
 	colorscheme solarized
 	set background=light
-	set gfn=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
-	au GUIEnter * simalt ~n
 	set encoding=utf8
 	" Set VIM to show non-printable characters
 	set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
 	set list
-	" Remove toolbar and menubar
-	set guioptions-=m
-	set guioptions-=T
+	" Platform-specific:
+	if (has('win32') || has('win64'))
+		" Maximize window
+		au GUIEnter * simalt ~n
+		" Remove toolbar and menubar
+		set guioptions-=m
+		set guioptions-=T
+		" Set font
+		set gfn=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
+	else
+		" Set font
+		set gfn=Menlo\ Regular\ for\ Powerline:h11
+	endif
 endif
 
 " Look for local vim config files
@@ -122,16 +136,16 @@ set tabstop=4
 set shiftwidth=4
 "set expandtab
 
-noremap <F2> :NERDTreeToggle
-noremap <F3> :NERDTreeFind
-noremap <F4> :TagbarToggle
+noremap <F2> :NERDTreeToggle
+noremap <F3> :NERDTreeFind
+noremap <F4> :TagbarToggle
 
-"noremap <F5> :TernDef
-"noremap <F6> :TernType
-"noremap <F7> :TernDocBrowse
+"noremap <F5> :TernDef
+"noremap <F6> :TernType
+"noremap <F7> :TernDocBrowse
 
-noremap <F11> :set background=light
-noremap <F12> :set background=dark
+noremap <F11> :set background=light
+noremap <F12> :set background=dark
 
 
 map <C-p> :CtrlP<CR>
@@ -144,6 +158,9 @@ map <C-b> :CtrlPBuffer<CR>
 
 " Automatically sync NERDTree
 "autocmd BufWinEnter * NERDTreeMirror
+
+" No line numbers in NERDTree
+let NERDTreeShowLineNumbers=0
 
 " Set vim to update autmatically when a file's read-only state is changed
 :set autoread
@@ -165,13 +182,11 @@ autocmd InsertLeave * :set relativenumber
 "\  'max_node_compl_len': 15
 "\}
 
+" Search with Ctrl-F
 noremap <C-f> :Ack --ignore-dir server/node_modules --ignore-dir node_modules -i 
 
 " Always show statusline
 set laststatus=2
-
-let NERDTreeShowLineNumbers=0
-
 
 " Configure Unite.vim
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -199,5 +214,3 @@ nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline
 nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
 let g:EclimCompletionMethod = 'omnifunc'
-
-" Configure vim-airline

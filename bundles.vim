@@ -40,7 +40,9 @@ Bundle 'michalliu/jsruntime.vim'
 Bundle 'freitass/todo.txt-vim'
 
 " SCM support :
-Bundle 'pydave/vim-perforce'
+if g:hasP4
+	Bundle 'pydave/vim-perforce'
+endif
 
 " Snippets :
 Bundle "MarcWeber/vim-addon-mw-utils"
