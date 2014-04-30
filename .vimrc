@@ -101,18 +101,14 @@ if has("gui_running")
 	" Set VIM to show non-printable characters
 	set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
 	set list
+	" Remove toolbar and menubar
+	set guioptions-=T
+	" Set font
+	set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h11
 	" Platform-specific:
 	if (has('win32') || has('win64'))
 		" Maximize window
 		au GUIEnter * simalt ~n
-		" Remove toolbar and menubar
-		set guioptions-=m
-		set guioptions-=T
-		" Set font
-		set gfn=DejaVu_Sans_Mono_for_Powerline:h10:cANSI
-	else
-		" Set font
-		set gfn=Menlo\ Regular\ for\ Powerline:h11
 	endif
 endif
 
