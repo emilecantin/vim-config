@@ -3,10 +3,6 @@
 " Please symlink or copy it to ~/.vimrc
 
 
-" Enable / disable features:
-let g:hasP4 = false
-
-"
 "
 " Vundle and bundles configuration:
 "
