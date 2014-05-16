@@ -18,6 +18,9 @@ else
 endif
 
 
+" Add mouse support
+set mouse=a
+
 " Add smart indentation
 set smartindent
 
@@ -91,7 +94,6 @@ noremap <C-E> <C-W>
 if has("gui_running")
 	" Configure Vim-Airline
 	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#branch#enabled = 0
 	syntax on
 	" Color Scheme
@@ -206,3 +208,6 @@ nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline
 nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+let g:used_javascript_libs = 'underscore,backbone,angularjs,angularui,jquery'
+

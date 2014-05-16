@@ -38,6 +38,7 @@ Bundle 'vim-scripts/genutils'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'freitass/todo.txt-vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
 
 " SCM support :
 
