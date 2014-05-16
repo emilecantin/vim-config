@@ -91,18 +91,19 @@ noremap <C-Left> :tabprevious
 " Use CTRL-E to do what CTRL-W used to do
 noremap <C-E> <C-W>
 
+" Configure Vim-Airline
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#branch#enabled = 0
+syntax on
+set encoding=utf8
+" Set VIM to show non-printable characters
+set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
+set list
+
 if has("gui_running")
-	" Configure Vim-Airline
-	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#branch#enabled = 0
-	syntax on
 	" Color Scheme
 	colorscheme solarized
-	set background=light
-	set encoding=utf8
-	" Set VIM to show non-printable characters
-	set listchars=tab:\| ,trail:•,extends:»,precedes:«,nbsp:_
-	set list
+	set background=dark
 	" Remove toolbar and menubar
 	set guioptions-=T
 	" Set font
