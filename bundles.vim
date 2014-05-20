@@ -39,6 +39,7 @@ Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'freitass/todo.txt-vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'burnettk/vim-angular'
 
 " SCM support :
 
