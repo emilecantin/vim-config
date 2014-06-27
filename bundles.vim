@@ -13,6 +13,13 @@ endif
 " Init Vundle :
 Bundle 'gmarik/vundle'
 
+"Generally useful:
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-surround'
+
 " Customization :
 Bundle 'emilecantin/vim-colorschemes'
 Bundle 'mhinz/vim-startify'
@@ -27,7 +34,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/unite.vim'
-Bundle 'majutsushi/tagbar'
 
 " Language support :
 Bundle 'scrooloose/syntastic'
@@ -42,6 +48,7 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'burnettk/vim-angular'
 
 " SCM support :
+Bundle 'tpope/vim-fugitive'
 
 " Snippets :
 Bundle "MarcWeber/vim-addon-mw-utils"
