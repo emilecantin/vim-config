@@ -173,7 +173,7 @@ vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
 " Buffer navigation
-nnoremap <leader>c :bd<CR>
+nnoremap <leader>w :bd<CR>
 nnoremap <leader>l :bn<CR>
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>j :tabnext<CR>

@@ -19,6 +19,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
 
 " Customization :
 Bundle 'emilecantin/vim-colorschemes'
