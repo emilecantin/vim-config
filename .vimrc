@@ -60,8 +60,10 @@ if has("gui_running")
 	set background=dark
 	" Remove toolbar and menubar
 	set guioptions-=T
+  " Fix mouse in gVim
+  set nomousehide
 	" Set font
-	set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
 	" Platform-specific:
 	if (has('win32') || has('win64'))
 		" Maximize window
