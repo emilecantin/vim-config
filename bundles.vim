@@ -53,10 +53,10 @@ Plugin 'burnettk/vim-angular'
 Plugin 'tpope/vim-fugitive'
 
 " Snippets :
-Plugin "MarcWeber/vim-addon-mw-utils"
-Plugin "tomtom/tlib_vim"
-Plugin "garbas/vim-snipmate"
-Plugin "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 
 filetype plugin indent on     " required!
