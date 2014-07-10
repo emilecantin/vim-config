@@ -11,51 +11,52 @@ else
 endif
 
 " Init Vundle :
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "Generally useful:
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'triglav/vim-visual-increment'
 
 " Customization :
-Bundle 'emilecantin/vim-colorschemes'
-Bundle 'mhinz/vim-startify'
-Bundle 'bling/vim-airline'
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'emilecantin/vim-colorschemes'
+Plugin 'mhinz/vim-startify'
+Plugin 'bling/vim-airline'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
 
 " Autocomplete :
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Search & navigation :
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/unite.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/unite.vim'
 
 " Language support :
-Bundle 'scrooloose/syntastic'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'groenewege/vim-less'
-Bundle 'ap/vim-css-color'
-Bundle 'vim-scripts/genutils'
-Bundle 'michalliu/jsoncodecs.vim'
-Bundle 'michalliu/jsruntime.vim'
-Bundle 'freitass/todo.txt-vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'burnettk/vim-angular'
+Plugin 'scrooloose/syntastic'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'groenewege/vim-less'
+Plugin 'ap/vim-css-color'
+Plugin 'vim-scripts/genutils'
+Plugin 'michalliu/jsoncodecs.vim'
+Plugin 'michalliu/jsruntime.vim'
+Plugin 'freitass/todo.txt-vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'burnettk/vim-angular'
 
 " SCM support :
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Snippets :
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin "MarcWeber/vim-addon-mw-utils"
+Plugin "tomtom/tlib_vim"
+Plugin "garbas/vim-snipmate"
+Plugin "honza/vim-snippets"
 
 
 filetype plugin indent on     " required!
