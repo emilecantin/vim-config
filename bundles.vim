@@ -48,6 +48,9 @@ Plugin 'michalliu/jsruntime.vim'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'burnettk/vim-angular'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'rodjek/vim-puppet'
+
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
