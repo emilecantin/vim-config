@@ -51,6 +51,7 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'eraserhd/vim-ios'
+Plugin 'rodjek/vim-puppet'
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
