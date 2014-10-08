@@ -21,9 +21,10 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'triglav/vim-visual-increment'
+Plugin 'Align'
 
 " Customization :
-Plugin 'emilecantin/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'mhinz/vim-startify'
 Plugin 'bling/vim-airline'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
@@ -48,15 +49,16 @@ Plugin 'michalliu/jsruntime.vim'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'burnettk/vim-angular'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'eraserhd/vim-ios'
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
 
-" Snippets :
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Snippet support :
+Plugin 'SirVer/ultisnips'
 
+" Snippets
+Plugin 'honza/vim-snippets'
 
 filetype plugin indent on     " required!

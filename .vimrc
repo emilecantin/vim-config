@@ -63,7 +63,7 @@ if has("gui_running")
   " Fix mouse in gVim
   set nomousehide
 	" Set font
-	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+	set guifont=Source\ Code\ Pro\ Medium:h11
 	" Platform-specific:
 	if (has('win32') || has('win64'))
 		" Maximize window
