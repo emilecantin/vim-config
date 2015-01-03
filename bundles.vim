@@ -30,13 +30,13 @@ Plugin 'bling/vim-airline'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 
 " Autocomplete :
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
 
 " Search & navigation :
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Shougo/unite.vim'
 
 " Language support :
 Plugin 'scrooloose/syntastic'
@@ -52,12 +52,14 @@ Plugin 'burnettk/vim-angular'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'eraserhd/vim-ios'
 Plugin 'rodjek/vim-puppet'
+Plugin 'mattn/emmet-vim'
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
 
 " Snippet support :
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'garbas/vim-snipmate'
 
 " Snippets
 Plugin 'honza/vim-snippets'

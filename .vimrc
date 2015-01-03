@@ -53,11 +53,12 @@ let g:startify_bookmarks = [ '$MYVIMRC', '/Users/ecantin/Dropbox/todo/todo.txt' 
 " Always show statusline
 set laststatus=2
 
+" Color Scheme
+colorscheme solarized
+set background=dark
+
 " GUI-specific things (MacVim and gVIM)
 if has("gui_running")
-	" Color Scheme
-	colorscheme solarized
-	set background=dark
 	" Remove toolbar and menubar
 	set guioptions-=T
   " Fix mouse in gVim
@@ -96,20 +97,6 @@ let g:used_javascript_libs = 'underscore,backbone,angularjs,angularui,jquery'
 
 " No line numbers in NERDTree
 let NERDTreeShowLineNumbers=0
-
-
-" Configure Unite.vim
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
-call unite#custom#source('line,outline','matchers','matcher_fuzzy')
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_source_rec_max_cache_files=5000
-let g:unite_prompt='» '
-let g:unite_source_grep_command='ack'
-let g:unite_source_grep_default_opts='--no-heading --no-color -a'
-let g:unite_source_grep_recursive_opt=''
 
 " ================================================================================
 " Key mappings
@@ -195,21 +182,6 @@ vnoremap > >gv
 
 " Search with Ctrl-F
 noremap <C-f> :Ack --ignore-dir server/node_modules --ignore-dir node_modules -i 
-
-
-" Unite.vim
-nmap <space> [unite]
-nnoremap [unite] <nop>
-nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec buffer file_mru bookmark<cr><c-u>
-nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec<cr><c-u>
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
-nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
-nnoremap <silent> [unite]o :<C-u>Unite -auto-resize -buffer-name=outline outline<cr>
-nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
-
 
 " ================================================================================
 " Auto-commands on start
