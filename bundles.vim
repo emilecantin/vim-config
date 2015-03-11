@@ -53,6 +53,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'eraserhd/vim-ios'
 Plugin 'rodjek/vim-puppet'
 Plugin 'mattn/emmet-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
