@@ -15,3 +15,7 @@ vim -u bundles.vim +BundleInstall +q #Install bundles
 cd ..
 ln -s .vim/.vimrc
 </pre>
+
+## LICENSE
+
+MIT: http://opensource.org/licenses/MIT
