@@ -54,6 +54,9 @@ Plugin 'eraserhd/vim-ios'
 Plugin 'rodjek/vim-puppet'
 Plugin 'mattn/emmet-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'ledger/vim-ledger'
 
 " SCM support :
 Plugin 'tpope/vim-fugitive'
